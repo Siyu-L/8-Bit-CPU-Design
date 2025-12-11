@@ -1,7 +1,7 @@
 # 8-Bit-CPU-Design
 
-Generic 8-bit CPU implemented in Logisim
-The machine has 3 different instruction formats and the ALU can perform 4 functions
+Generic 8-bit CPU implemented in Logisim.
+The machine has 3 different instruction formats, and the ALU can perform 4 functions.
 
 ## Instruction Formats
 

@@ -1,5 +1,5 @@
 # 8-Bit-CPU-Design
-
+![CPU](CPU.png)
 Generic 8-bit CPU implemented in Logisim.
 The machine has 3 different instruction formats, and the ALU can perform 4 functions.
 
@@ -27,8 +27,6 @@ The machine has 3 different instruction formats, and the ALU can perform 4 funct
 | Nand      |   0  |   0  |
 
 
-
-
 ## Instruction Definitions
 | Instruction Format | Opcode | Operation |
 |--------------------|--------|-----------|
@@ -38,3 +36,15 @@ The machine has 3 different instruction formats, and the ALU can perform 4 funct
 | addi               | 0011   | rds=rds+imm |
 | sub                | 0100   | rds=rds-rs |
 | jmp                | 1111   | PC=PC+offset (offset is sign extended) |
+
+
+## RAM contents in assembly format
+```
+addi r0, 5      ; R0 = 5                                              ; 0011 0101
+addi r1, 7      ; R1 = 7                                              ; 0011 1111
+add r0, r1      ; R0 = R0 + R1 = 12                                   ; 0001 0100
+sub r1, r0      ; R1 = R1 - R0 = -5                                   ; 0100 1000
+addi r0, 4      ; R0 = R0 + 4 = 16                                    ; 0011 0100
+addm r1, r0     ; R1 = R1 + mem[R0] = -5 + mem[16] = -5 + 117 = 112   ; 0010 1000
+jmp 7           ; Jump to instruction at PC + 7                       ; 1111 0111
+```
